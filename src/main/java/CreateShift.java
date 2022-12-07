@@ -1,4 +1,4 @@
-public class CreateShift {
+ public  class CreateShift {
     private String Shiftname ;
     private int hour;
     private int minute;

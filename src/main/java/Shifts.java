@@ -32,6 +32,9 @@ public class Shifts {
         GroupOfPersons.add(p3);
         GroupOfPersons.add(p4);
         GroupOfPersons.add(p5);
+        GroupOfPersons.add(p6);
+        GroupOfPersons.add(p7);
+        GroupOfPersons.add(p8);
 
         System.out.println("The group is included by  :");
         for (int i = 0 ; i<group.getSizeOfGroup(); i++){

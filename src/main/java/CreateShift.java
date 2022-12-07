@@ -1,4 +1,4 @@
-public class Shift {
+public class CreateShift {
     private String Shiftname ;
     private int hour;
     private int minute;
@@ -12,7 +12,7 @@ public class Shift {
             "Monday", "Tuesday"," Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
     };
 
-    Shift (String name , int hour ,int minute,int EndHour ,int EndMinute,int d,int m, int y ) {
+    CreateShift(String name , int hour , int minute, int EndHour , int EndMinute, int d, int m, int y ) {
         this.Shiftname=name;
         this.hour=hour;
         this.minute=minute;

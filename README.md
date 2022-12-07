@@ -1,6 +1,6 @@
 # Shifts
 
-Shift management system
+CreateShift management system
 
 ## Getting started
 

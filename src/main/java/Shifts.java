@@ -1,20 +1,21 @@
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Date;/**
+
+/**
  *
  */
 public class Shifts {
 
 
     public static void main(String[] args) {
-
-        Shift shift =new Shift("NewShift",12,00,15,30,17,8,1999);
+        ArrayList<CreateShift> HistoryOfShifts = new ArrayList();
+        CreateShift shift =new CreateShift("NewShift",12,00,15,30,17,8,1999);
+        HistoryOfShifts.add(shift);
 
 
         System.out.println(shift.toString());
 
 
-        Group group=new Group("Name of group",4);
+        Group group=new Group("NameGroup",4);
 
 
 
@@ -36,7 +37,7 @@ public class Shifts {
         GroupOfPersons.add(p7);
         GroupOfPersons.add(p8);
 
-        System.out.println("The group is included by  :");
+        System.out.println("Group name :" +group.getName() + "\n The group is included by  :");
         for (int i = 0 ; i<group.getSizeOfGroup(); i++){
             System.out.println(GroupOfPersons.get(i).toString());
         }

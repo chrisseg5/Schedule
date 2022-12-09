@@ -1,17 +1,29 @@
+
 import java.util.ArrayList;
+
 import java.util.List;
+import java.util.UUID;
 
-public class Person  {
-    private String name ;
+public class Person implements Base_assignable_resource {
+    String name;
 
-    Person (String name) {
+    private UUID id=UUID.randomUUID();
+
+    private List<Group> PersonGroup;
+
+    public void setName(String name){
         this.name=name;
-
     }
-    @Override
-    public  String toString (){
+    public String getName(){
         return name;
     }
 
+    public void setPersonGroup(List<Group> personGroup) {
+        PersonGroup = personGroup;
+    }
+
+    public List<Group> getPersonGroup() {
+        return PersonGroup;
+    }
 
 }

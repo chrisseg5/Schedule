@@ -1,26 +1,27 @@
 import java.util.ArrayList;
-import java.util.Objects;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
 
-public class Group {
-    private String name ;
-    private int SizeOfGroup;
+public class Group implements Base_assignable_resource {
+    private UUID id=UUID.randomUUID();
+    String name;
+    private List<Person> listOfPeople;
 
-    Group(String name , int SizeOfGroup){
-        this.name=name;
-        this.SizeOfGroup=SizeOfGroup;
-    }
-
-    public void  setName(String name) {
-        this.name=name;
+    public void setName(String name) {
+        this.name = name;
     }
     public String getName(){
-        return this.name;
-    }
-    public void  setSizeOfGroup(int SizeOfGroup) {
-        this.SizeOfGroup=SizeOfGroup;
-    }
-    public int getSizeOfGroup(){
-        return this.SizeOfGroup;
+        return name ;
     }
 
+    public void setListOfPeople(List<Person> listOfPeople) {
+        this.listOfPeople = listOfPeople;
+    }
+
+    public List<Person> getListOfPeople() {
+        return listOfPeople;
+    }
 }
+
+

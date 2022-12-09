@@ -1,8 +1,13 @@
+import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public interface Base_assignable_resource {
+    String name ="";
+
     void setName(String name);
+
     String getName();
 
     default void PersonsForTheShift() {
@@ -12,4 +17,5 @@ public interface Base_assignable_resource {
       // PersonsForTheShift.add(new Group());
 
     }
+
 }

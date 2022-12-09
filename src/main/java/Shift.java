@@ -1,9 +1,10 @@
-import com.sun.tools.javac.Main;
-
+import java.util.AbstractCollection;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.*;
 
-public class Shifts {
+public class Shift {
     private String shiftname ;
     private int fromHour;
     private int fromMinute;
@@ -12,10 +13,11 @@ public class Shifts {
     private int day;
     private int month;
     private int year ;
+    private Set<Base_assignable_resource> set= new HashSet<>();
 
 
 
-    Shifts(String name , int hour , int minute, int EndHour , int EndMinute, int day, int month, int year ){
+    Shift(String name , int hour , int minute, int EndHour , int EndMinute, int day, int month, int year ){
         this.shiftname=name;
         this.fromHour=hour;
         this.fromMinute=minute;
@@ -26,12 +28,14 @@ public class Shifts {
         this.year=year;
         setTime(this.fromHour,this.fromMinute);
 
+
     }
     public void setTime(int h , int m  ){
         fromHour=((h>=0 && h<24) ? h:00);
         fromMinute=((m>=0 && m<60) ? fromMinute:00);
 
     }
+
 
  // public static void main(String[] args) {
 

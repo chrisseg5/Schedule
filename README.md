@@ -1,4 +1,4 @@
-# Shifts
+# Shift
 
 CreateShift management system
 

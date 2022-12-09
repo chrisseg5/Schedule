@@ -19,13 +19,6 @@ public class Person implements Base_assignable_resource {
         return name;
     }
 
-    public void setPersonGroup(List<Group> personGroup) {
-        PersonGroup = personGroup;
-    }
-
-    public List<Group> getPersonGroup() {
-        return PersonGroup;
-    }
 
 
 

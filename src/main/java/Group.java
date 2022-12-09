@@ -4,12 +4,13 @@ import java.util.List;
 import java.util.UUID;
 
 public class Group implements Base_assignable_resource {
-    private UUID id=UUID.randomUUID();
+    private UUID id;
     String name;
     private List<Person> listOfPeople;
 
     public void setName(String name) {
         this.name = name;
+        id=UUID.randomUUID();
     }
     public String getName(){
         return name ;

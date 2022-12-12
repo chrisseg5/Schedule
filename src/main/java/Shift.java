@@ -1,9 +1,3 @@
-import java.util.AbstractCollection;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Arrays;
-import java.util.ArrayList;
-
 public class Shift {
     private String shiftname ;
     private int fromHour;
@@ -13,7 +7,7 @@ public class Shift {
     private int day;
     private int month;
     private int year ;
-    private Set<Base_assignable_resource> set= new HashSet<>();
+
 
 
 
@@ -27,21 +21,25 @@ public class Shift {
         this.month=month;
         this.year=year;
         setTime(this.fromHour,this.fromMinute);
-
-
     }
     public void setTime(int h , int m  ){
         fromHour=((h>=0 && h<24) ? h:00);
         fromMinute=((m>=0 && m<60) ? fromMinute:00);
 
     }
+    public String toString(){
+        return "You made a shift with name "+shiftname+" form "+fromHour+":"+fromMinute+"to "+endHour+":"+ endMinute+" in "+day+"/"+month+"/"+year ;
+    }
+    public  void makegroup(){
+        Group group =new Group("GROUP NAME1");
+        group.addPeople(new Person("Giannis"));
+        group.addPeople(new Person("Xristos"));
+        group.addPeople(new Person("Alexandros"));
+
+        System.out.println("the people that you choose are : "+group.getPeople());
+    }
 
 
- // public static void main(String[] args) {
 
- // //  Base_assignable_resource p=new Person();
- // //  Base_assignable_resource g=new Group();
-
- // }
 
 }

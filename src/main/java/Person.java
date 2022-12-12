@@ -1,25 +1,29 @@
+import java.util.*;
 
-import java.util.ArrayList;
-
-import java.util.List;
-import java.util.UUID;
-
-public class Person implements Base_assignable_resource {
-    String name;
-
+public  class Person implements GroupInterface {
     private UUID id;
-
-    private List<Group> PersonGroup;
-
-    public void setName(String name){
+    private String name;
+    public Person(String name){
+        this.id=UUID.randomUUID();
         this.name=name;
-        id=UUID.randomUUID();
-    }
-    public String getName(){
-        return name;
     }
 
 
+    @Override
+    public void addPeople(Person person) {
 
+    }
 
+    @Override
+    public List<Person> getPeople() {
+        return null;
+    }
+
+    public  String getName(){
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

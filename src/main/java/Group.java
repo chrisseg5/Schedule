@@ -9,14 +9,20 @@ public class Group implements GroupInterface {
         this.name=name;
         this.people=new ArrayList<>();
     }
-    public void addPeople(Person person){
+    public void addPersons(Person person){
         this.people.add(person);
     }
-    public List<Person> getPeople(){
+    public List<Person> getPersons(){
+
         return this.people;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
     public  String getName(){
         return name;
     }
+
+
 
 }

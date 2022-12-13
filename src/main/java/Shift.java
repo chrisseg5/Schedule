@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Shift {
     private String shiftname ;
     private int fromHour;
@@ -27,19 +29,38 @@ public class Shift {
         fromMinute=((m>=0 && m<60) ? fromMinute:00);
 
     }
-    public String toString(){
-        return "You made a shift with name "+shiftname+" form "+fromHour+":"+fromMinute+"to "+endHour+":"+ endMinute+" in "+day+"/"+month+"/"+year ;
+    @Override
+    public String toString() {
+        return "Shift{" +
+                "shift name='" + shiftname + '\'' +
+                ", from Hour=" + fromHour +
+                ", from Minute=" + fromMinute +
+                ", end Hour=" + endHour +
+                ", end Minute=" + endMinute +
+                ", day=" + day +
+                ", month=" + month +
+                ", year=" + year +
+                '}';
     }
-    public  void makegroup(){
-        Group group =new Group("GROUP NAME1");
-        group.addPeople(new Person("Giannis"));
-        group.addPeople(new Person("Xristos"));
-        group.addPeople(new Person("Alexandros"));
+    public void personsForShift(List<String> list) {
+             if(list.size()<2){
+                GroupInterface person=new Person(list.get(0));
+                System.out.println("The Person that you add  is : " + person.getName());
 
-        System.out.println("the people that you choose are : "+group.getPeople());
+             }else{
+                 GroupInterface group=new Group("Group name1");
+                 for(int i=0;i< list.size();i++) {
+                     ((Group) group).addPersons(new Person(list.get(i)));
+                 }
+                 System.out.println("The Persons that you add are : "+((Group) group).getPersons());
+
+             }
+       }
     }
 
 
 
 
-}
+
+
+

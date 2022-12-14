@@ -1,9 +1,7 @@
-import java.util.Collections;
-import java.util.List;
+interface Employees {
 
- interface GroupInterface {
-
-  public String getName();
+    public String getName();
+    public String getNameForShift();
 
 
 

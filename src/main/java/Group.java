@@ -1,6 +1,6 @@
 
 import java.util.*;
-public class Group implements GroupInterface {
+public class Group implements Employees {
     private  UUID id;
     private String name ;
     private List<Person> people;
@@ -19,10 +19,10 @@ public class Group implements GroupInterface {
     public void setName(String name) {
         this.name = name;
     }
-    public  String getName(){
-        return name;
+    public  String getNameForShift(){
+        return this.people.toString();
     }
-
-
-
+    public String getName() {
+        return this.name;
+    }
 }

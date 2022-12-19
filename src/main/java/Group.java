@@ -16,6 +16,7 @@ public class Group implements Employees {
 
         return this.people;
     }
+
     public void setName(String name) {
         this.name = name;
     }

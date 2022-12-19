@@ -1,8 +1,6 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-class Shift {
+class Shift  {
    private  String shiftname;
    private  int stratHour;
    private  int startMinute;
@@ -133,6 +131,8 @@ class Shift {
        this.roles=roles;
        System.out.println(this.roles+" in shift " + shiftname);
    }
+
+
 
 }
 

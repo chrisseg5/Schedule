@@ -11,9 +11,9 @@ public class Schedule {
          Role role1=new Role("Leader");
 
 
-         Shift shift1=new Shift("shift1",9,00,10,00,12,2,2033);
-         Shift shift2=new Shift("shift2",12,00,20,00,12,2,2033);
-         Shift shift3=new Shift("shift3",15,00,16,00,12,2,2033);
+         Shift shift1=new Shift("shift1",19,00,10,00,12,2,2022);
+         Shift shift2=new Shift("shift2",12,00,20,00,12,2,2022);
+         Shift shift3=new Shift("shift3",15,00,16,00,12,2,2022);
          shifts.add(shift1);
          shifts.add(shift2);
          shifts.add(shift3);
@@ -43,6 +43,21 @@ public class Schedule {
           Map<Person,Role> roles=new HashMap<>();
           roles.put(person2,role1);
           shift1.setRoles(roles);
+          Collections.sort(shifts, new Comparator<Shift>() {
+              @Override
+              public int compare(Shift s1, Shift s2) {
+                  if(s1.getYear()!=s2.getYear()){
+                      return s1.getYear()-s2.getYear();
+                  }else if(s1.getMonth()!=s2.getMonth()){
+                      return s1.getMonth()-s2.getMonth();
+                  } else if (s1.getDay()!=s2.getDay()) {
+                      return s1.getDay()-s2.getDay();
+                  }
+                  return s1.getStratHour()-s2.getStratHour();
+
+
+              }
+          });
 
 
           for (Shift shift:shifts){
@@ -55,7 +70,6 @@ public class Schedule {
             for(int j=i+1;j<shifts.size();j++){
                 if(shifts.get(i).overlap(shifts.get(j))){
                     System.out.println("Overlap detected between  "+shifts.get(i).getShiftname()+" and "+shifts.get(j).getShiftname());
-
                     for(Employees p1 : shifts.get(i).getPersonOrGroupForShift()){
                         for(Employees p2 : shifts.get(j).getPersonOrGroupForShift()){
                             if(p1.getName().equals(p2.getName())){

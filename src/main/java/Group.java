@@ -3,27 +3,32 @@ import java.util.*;
 public class Group implements Employees {
     private  UUID id;
     private String name ;
-    private List<Person> people;
+    private List<Assignment> assignments = new ArrayList<>();
+
     public  Group(String name) {
         this.id=UUID.randomUUID();
         this.name=name;
-        this.people=new ArrayList<>();
-    }
-    public void addPersons(Person person){
-        this.people.add(person);
-    }
-    public List<Person> getPersons(){
-
-        return this.people;
     }
 
     public void setName(String name) {
         this.name = name;
     }
-    public  String getNameForShift(){
-        return this.people.toString();
-    }
     public String getName() {
         return this.name;
     }
+
+    public void assignPerson(Person person, Role role) {
+        this.assignments.add(new Assignment(person, role));
+    }
+
+    public List<Assignment> getAssignments() {
+        return assignments;
+    }
+
+    @Override
+    public String getNameForShift() {
+        return this.getName();
+    }
+
+
 }

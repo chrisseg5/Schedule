@@ -31,12 +31,12 @@ public class ShiftsApp {
         Group group1=new Group("Group1");
         Group group2=new Group("Group2");
         Group group3=new Group("Group3");
-        group1.addPersons(person2);
-        group1.addPersons(person3);
-        group2.addPersons(person1);
-        group2.addPersons(person3);
-        group3.addPersons(person4);
-        group3.addPersons(person6);
+//        group1.addPersons(person2);
+//        group1.addPersons(person3);
+//        group2.addPersons(person1);
+//        group2.addPersons(person3);
+//        group3.addPersons(person4);
+//        group3.addPersons(person6);
 
         shift1.addpersonOrGroupForShift(group1);
         shift2.addpersonOrGroupForShift(person1);

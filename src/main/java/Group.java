@@ -1,6 +1,6 @@
 
 import java.util.*;
-public class Group implements Employees {
+public class Group implements ShiftResource {
     private  UUID id;
     private String name ;
     private List<Assignment> assignments = new ArrayList<>();

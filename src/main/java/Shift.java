@@ -2,7 +2,7 @@ import java.util.*;
 
 class Shift  {
    private  String shiftname;
-   private  int stratHour;
+   private  int startHour;
    private  int startMinute;
    private  int endHour;
    private  int endMinute;
@@ -11,15 +11,16 @@ class Shift  {
    private  int month;
    private  int year;
    private Map<Person,Role> roles;
-   private List<Employees> personOrGroupForShift;
+   private List<ShiftResource> personOrGroupForShift;
 
-   public String getShiftname() {
+   public String getShiftName() {
          return shiftname;
-     }public void setShiftname(String shiftname) {
+     }
+   public void setShiftname(String shiftname) {
        this.shiftname = shiftname;
    }
-   public int getStratHour() {
-       return stratHour;
+   public int getStartHour() {
+       return startHour;
    }
    public int getStartMinute() {
        return startMinute;
@@ -31,8 +32,8 @@ class Shift  {
        return endMinute;
    }
 
-    public void setStratHour(int stratHour) {
-        this.stratHour = stratHour;
+    public void setStartHour(int startHour) {
+        this.startHour = startHour;
     }
 
     public void setStartMinute(int startMinute) {
@@ -75,35 +76,35 @@ class Shift  {
         return roles;
     }
 
-    public void setPersonOrGroupForShift(List<Employees> personOrGroupForShift) {
+    public void setPersonOrGroupForShift(List<ShiftResource> personOrGroupForShift) {
         this.personOrGroupForShift = personOrGroupForShift;
     }
 
     Shift(String name, int hour, int minute, int EndHour, int EndMinute, int day, int month, int year) {
 
        this.shiftname = name;
-       this.stratHour = hour;
+       this.startHour = hour;
        this.startMinute = minute;
        this.endHour = EndHour;
        this.endMinute = EndMinute;
        this.day = day;
        this.month = month;
        this.year = year;
-       setTime(this.stratHour, this.startMinute);
+       setTime(this.startHour, this.startMinute);
        this.personOrGroupForShift = new ArrayList<>();
    }
    public void setTime(int h, int m) {
-       stratHour = ((h >= 0 && h < 24) ? stratHour : 00);
+       startHour = ((h >= 0 && h < 24) ? startHour : 00);
        startMinute = ((m >= 0 && m < 60) ? startMinute : 00);
    }
-   public void addpersonOrGroupForShift(Employees personOrGroupForShift) {
+   public void addpersonOrGroupForShift(ShiftResource personOrGroupForShift) {
        this.personOrGroupForShift.add(personOrGroupForShift);
    }
-   public List<Employees> getPersonOrGroupForShift() {
+   public List<ShiftResource> getPersonOrGroupForShift() {
        return this.personOrGroupForShift;
    }
    public void printpersonOrGroupForShift() {
-       for (Employees personOrGroup : this.personOrGroupForShift) {
+       for (ShiftResource personOrGroup : this.personOrGroupForShift) {
            if(getPersonOrGroupForShift().equals(personOrGroup.getName())){
                System.out.println(personOrGroup.getNameForShift());
            }else{
@@ -115,15 +116,15 @@ class Shift  {
    @Override
    public String toString() {
        return
-               "shift name='" + shiftname + '\'' + ", from Hour=" + stratHour + ", from Minute=" + startMinute + ", end Hour=" + endHour + ", end Minute=" + endMinute + ", day=" + day + ", month=" + month + ", year=" + year;
+               "shift name='" + shiftname + '\'' + ", from Hour=" + startHour + ", from Minute=" + startMinute + ", end Hour=" + endHour + ", end Minute=" + endMinute + ", day=" + day + ", month=" + month + ", year=" + year;
 
    }
 
    public boolean overlap(Shift shifts){
-       if(shifts.stratHour >=this.stratHour && shifts.endHour<=this.endHour && shifts.day==this.day && shifts.month==this.month && shifts.year==this.year){
+       if(shifts.startHour >=this.startHour && shifts.endHour<=this.endHour && shifts.day==this.day && shifts.month==this.month && shifts.year==this.year){
            return true;
        }
-       if(this.stratHour >= shifts.stratHour && this.endHour<= shifts.endHour && shifts.day==this.day && shifts.month==this.month && shifts.year==this.year){
+       if(this.startHour >= shifts.startHour && this.endHour<= shifts.endHour && shifts.day==this.day && shifts.month==this.month && shifts.year==this.year){
            return  true ;
        }
        return false;

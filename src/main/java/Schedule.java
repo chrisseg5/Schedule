@@ -24,7 +24,7 @@ public class Schedule {
                 } else if (s1.getDay()!=s2.getDay()) {
                     return s1.getDay()-s2.getDay();
                 }
-                return s1.getStratHour()-s2.getStratHour();
+                return s1.getStartHour()-s2.getStartHour();
             }
         });
 
@@ -38,9 +38,9 @@ public class Schedule {
         for(int i=0; i<shifts.size();i++){
             for(int j=i+1;j<shifts.size();j++){
                 if(shifts.get(i).overlap(shifts.get(j))){
-                    System.out.println("Overlap detected between  "+shifts.get(i).getShiftname()+" and "+shifts.get(j).getShiftname());
-                    for(Employees p1 : shifts.get(i).getPersonOrGroupForShift()){
-                        for(Employees p2 : shifts.get(j).getPersonOrGroupForShift()){
+                    System.out.println("Overlap detected between  "+shifts.get(i).getShiftName()+" and "+shifts.get(j).getShiftName());
+                    for(ShiftResource p1 : shifts.get(i).getPersonOrGroupForShift()){
+                        for(ShiftResource p2 : shifts.get(j).getPersonOrGroupForShift()){
                             if(p1.getName().equals(p2.getName())){
                                 System.out.println("You have set the person "+p1.getName()+" in two or more shifts");
                             }

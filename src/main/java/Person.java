@@ -1,6 +1,6 @@
 import java.util.*;
 
-public  class Person implements Employees {
+public  class Person implements ShiftResource {
     private UUID id;
 
     private String name;

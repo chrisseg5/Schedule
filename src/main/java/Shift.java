@@ -80,6 +80,7 @@ class Shift  {
     }
 
     Shift(String name, int hour, int minute, int EndHour, int EndMinute, int day, int month, int year) {
+
        this.shiftname = name;
        this.stratHour = hour;
        this.startMinute = minute;

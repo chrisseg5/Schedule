@@ -5,6 +5,7 @@ public class Group implements ShiftResource {
     private String name ;
     private List<Assignment> assignments = new ArrayList<>();
 
+
     public  Group(String name) {
         this.id=UUID.randomUUID();
         this.name=name;
@@ -17,11 +18,11 @@ public class Group implements ShiftResource {
         return this.name;
     }
 
-    public void assignPerson(Person person, Role role) {
+    public void assignPerson(Person person,Role role) {
         this.assignments.add(new Assignment(person, role));
     }
 
-    public List<Assignment> getAssignments() {
+    public List<Assignment> getAssignments( ) {
         return assignments;
     }
 
@@ -29,6 +30,10 @@ public class Group implements ShiftResource {
     public String getNameForShift() {
         return this.getName();
     }
+
+      public void addPersonAndRole(Assignment assignment){
+          assignments.add(assignment);
+      }
 
 
 }

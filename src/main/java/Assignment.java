@@ -18,4 +18,8 @@ public class Assignment {
     public Role getRole() {
         return role;
     }
+
+
+
+
 }

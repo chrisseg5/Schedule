@@ -86,10 +86,7 @@ class Shift  {
     }
       return false;
     }
-   public void setRoles(Map<Person,Role> roles){
-       this.roles=roles;
-       System.out.println(this.roles+" in shift " + shiftname);
-   }
+
 
     public LocalDateTime getEndTime() {
         return endTime;

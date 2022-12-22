@@ -12,10 +12,16 @@ Role role=new Role("role");
 Assignment assignment=new Assignment(person,role);
     @Test
     void getPerson() {
+        List<Person> p=new ArrayList<>();
+        p.add(assignment.getPerson());
+        Assertions.assertFalse(p.isEmpty());
 
     }
 
     @Test
     void getRole() {
+        List<Role> r=new ArrayList<>();
+        r.add(assignment.getRole());
+        Assertions.assertFalse(r.isEmpty());
     }
 }

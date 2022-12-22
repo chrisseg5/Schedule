@@ -13,7 +13,7 @@ class ShiftTest {
     }
 
     LocalDateTime startShift1 = LocalDateTime.of(2022, 1, 1, 2, 1);
-    LocalDateTime endShift1 = LocalDateTime.of(2022, 1, 1, 4, 1);
+    LocalDateTime endShift1 = LocalDateTime.of(2022, 1, 1, 3, 1);
     LocalDateTime startShift2 = LocalDateTime.of(2022, 1, 1, 1, 1);
     LocalDateTime endShift2 = LocalDateTime.of(2022, 1, 1, 3, 1);
     Shift shift1 = new Shift("shift1", startShift1, endShift1);

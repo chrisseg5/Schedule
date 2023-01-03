@@ -7,6 +7,7 @@ class Shift  {
     private  LocalDateTime endTime;
    private Map<Person,Role> roles;
    private List<ShiftResource> personOrGroupForShift;
+   private List<Assignment>assignments;//////////////////////////////
     Shift(String shiftname, LocalDateTime startTime,LocalDateTime endTime) {
         this.shiftname=shiftname;
         this.startTime=startTime;
@@ -96,11 +97,3 @@ class Shift  {
         this.endTime = endTime;
     }
 }
-
-
-
-
-
-
-
-

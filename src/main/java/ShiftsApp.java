@@ -14,6 +14,7 @@ public class ShiftsApp {
 
         List<Schedule> schedules=new ArrayList<Schedule>();
 
+        Schedule scheduleA = new Schedule("Schedule1");
 
         LocalDateTime startShift1=LocalDateTime.of(2022,1,1,2,1);
         LocalDateTime endShift1=LocalDateTime.of(2022,1,1,4,1);
@@ -22,7 +23,6 @@ public class ShiftsApp {
         LocalDateTime startShift3=LocalDateTime.of(2023,1,1,12,0);
         LocalDateTime endShift3=LocalDateTime.of(2023,1,1,16,0);
 
-        Schedule scheduleA = new Schedule("Schedule1");
 
         Shift shift1=new Shift("shift1",startShift1,endShift1);
         Shift shift2=new Shift("shift2",startShift2,endShift2);

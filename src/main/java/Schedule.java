@@ -23,33 +23,34 @@ public class Schedule {
         Collections.sort(shifts, new Comparator<Shift>() {
             @Override
             public int compare(Shift s1, Shift s2) {
-               return s1.getStartTime().compareTo(s2.getStartTime());
+                return s1.getStartTime().compareTo(s2.getStartTime());
             }
         });
 
 
         for (Shift shift:shifts){
             System.out.println("\nthe shift you have made:\n"+shift+"\n from:");
+
             shift.printpersonOrGroupForShift();
             System.out.println("-----------------------------------------------------------");
         }
 
 
-  for(int i=0; i<shifts.size();i++){
+        for(int i=0; i<shifts.size();i++){
 
-      for(int j=i+1;j<shifts.size();j++){
+            for(int j=i+1;j<shifts.size();j++){
 
-          if(shifts.get(i).overlap(shifts.get(j))){
+                if(shifts.get(i).overlap(shifts.get(j))){
 
-              System.out.println("\n\n\nOverlap detected between  "+shifts.get(i).getShiftName()+" and "+shifts.get(j).getShiftName());
+                    System.out.println("\n\n\nOverlap detected between  "+shifts.get(i).getShiftName()+" and "+shifts.get(j).getShiftName());
 
-          }
-      }
-  }
-
-
+                }
+            }
+        }
 
         return "";
+
+
     }
 
 }
